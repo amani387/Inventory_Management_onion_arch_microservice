@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Inventory.Application.DTOs;
 
-namespace Inventory.Application.Interfaces.Repositories
+namespace Inventory.Application.Interfaces;
+
+public interface IProductService
 {
-    internal interface IProductRepository
-    {
-    }
+    Task<ProductDto> CreateProductAsync(CreateProductDto dto);
+    Task<ProductDto?> GetProductByIdAsync(int id);
 }

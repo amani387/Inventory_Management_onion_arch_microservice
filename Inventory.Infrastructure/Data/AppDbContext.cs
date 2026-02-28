@@ -1,12 +1,15 @@
-﻿using System;
+﻿using Inventory.Core.Entities;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Inventory.Infrastructure.Data
+namespace Inventory.Infrastructure.Data;
+
+public class AppDbContext : DbContext
 {
-    internal class AppDbContext
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
+
     }
+
+    public DbSet<Product> Products { get; set; }
 }
